@@ -2,7 +2,7 @@
   <header class="my-3 ">
     <div class="row ">
       <div class="col-3">
-        <a class="text-uppercase logo-nav text-decoration-none text-white" href="#"
+        <a class="text-uppercase logo-nav text-decoration-none text-white h5" href="#"
           ><span id="colorized-title">nex</span>gen</a
         >
       </div>
