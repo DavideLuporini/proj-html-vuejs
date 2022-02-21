@@ -67,11 +67,5 @@ export default {
   button{
     font-weight: bold;
   }
-    .button-full{
-      background-color: $blue-lagoon;
-    }
-    .button-empty{
-      border: $blue-lagoon 2px solid;
-    }
 }
 </style>
