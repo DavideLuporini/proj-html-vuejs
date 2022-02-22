@@ -18,9 +18,7 @@
                 <span class="badge rounded mx-3 text-capitalize">quality</span>
                 <span class="badge rounded text-capitalize">security</span>
               </div>
-              <a href="#" class="btn button-full text-white text-uppercase"
-                >read more</a
-              >
+            <ButtonFull text="read more"/>
             </div>
           </div>
         </div>
@@ -62,8 +60,12 @@
 </template>
 
 <script>
+import ButtonFull from "./microcomponents/ButtonFull.vue";
 export default {
-  name: "Sectioncompany",
+  name: "SectionLogistics",
+  components:{
+    ButtonFull,
+  }
 };
 </script>
 
@@ -79,6 +81,12 @@ export default {
   }
   .card {
     border: 0;
+    height: 340px;
+    transition: 0.2s linear;
+    &:hover{
+        box-shadow: 5px 5px 15px 5px $blue-lagoon;
+        transition: 0.2s linear;
+    }
   }
   .pillss span {
     color: $blue-lagoon;

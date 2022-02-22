@@ -30,10 +30,5 @@ export default {
 *{
   font-family: 'Nanum Gothic', sans-serif;
 }
-.button-full{
-      background-color: $blue-lagoon;
-    }
-    .button-empty{
-      border: $blue-lagoon 2px solid;
-    }
+
 </style>

@@ -1,17 +1,29 @@
 <template>
   <div>
-    <Sectionlogistics/>
-    <Sectioncompany/>
+    <SectionLogistics/>
+    <SectionCompany/>
+    <SectionNews/>
+    <SectionKnow/>
+    <SectionHelp/>
+    <SectionLinks/>
   </div>
 </template>
 
 <script>
-import Sectionlogistics from './Sectionlogistics.vue'
-import Sectioncompany from './Sectioncompany.vue'
+import SectionLogistics from './SectionLogistics.vue';
+import SectionCompany from './SectionCompany.vue';
+import SectionNews from './SectionNews.vue';
+import SectionKnow from './SectionKnow.vue';
+import SectionLinks from './SectionLinks.vue';
+import SectionHelp from './SectionHelp.vue';
 export default {
   components:{
-    Sectionlogistics,
-    Sectioncompany,
+    SectionLogistics,
+    SectionCompany,
+    SectionNews,
+    SectionKnow,
+    SectionLinks,
+    SectionHelp,
   },
   name: 'Main',
   props: {

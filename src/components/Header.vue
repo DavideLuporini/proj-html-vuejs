@@ -59,6 +59,7 @@ export default {
 header{
   background-color: $blue-navy;
   color: $secondary-color;
+  font-size: 0.7rem;
 }
   span{
     line-height: 1;

@@ -12,12 +12,8 @@
             For 20 year woring with the most<br> innovatein the field of transport.
           </div>
           <div class="col-7 d-flex justify-content-between my-5">
-            <button type="button " class="btn btn-md button-full rounded text-white text-uppercase">
-              get in touch
-            </button>
-            <button type="button " class="btn btn-md button-empty rounded text-white text-uppercase">
-              read more
-            </button>
+            <ButtonFull text="get in touch"/>
+            <ButtonEmpty text="read more"/>
           </div>
         </div>
       </div>
@@ -27,10 +23,14 @@
 
 <script>
 import Navjumbo from "./Navjumbo.vue";
+import ButtonFull from "./microcomponents/ButtonFull.vue";
+import ButtonEmpty from "./microcomponents/ButtonEmpty.vue";
 export default {
   name: "Jumbo",
   components: {
     Navjumbo,
+    ButtonFull,
+    ButtonEmpty,
   },
   props: {},
   data() {
