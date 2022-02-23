@@ -1,48 +1,38 @@
 <template>
-  <section id="link">
-    <div class="container h-100">
-      <div class="row h-100 d-flex justify-content-center align-items-center">
-        <!-- contacts -->
-      <div class="col-3">
-        <a class="text-uppercase logo text-decoration-none text-white h5" href="#"
-          ><span id="colorized-title">nex</span>gen</a
-        >
-                <div class="my-2">
-          A functional HTML Template for Corporate and Business.
+  <section id="news" class="my-5">
+    <div class="container">
+      <div
+        class="row d-flex flex-column justify-content-center align-items-center"
+      >
+        <div id="subtitle" class="col text-uppercase my-2">
+          our editorial content
         </div>
-                  <div id="mail" class="col-12 hours py-3">
-            <i class="fas fa-envelope"></i>
-            <span class="ps-2">hello@example.it</span>
-          </div>
-          <div id="cellphone" class="col-12 py-3">
-            <i class="fas fa-phone-alt"></i>
-            <span class="ps-2">+1(305) 1234-5678</span>
-          </div>
-          <div id="cellphone" class="col-12 py-3">
-            <i class="fas fa-map-marker-alt"></i>
-            <span class="ps-2">main evenue</span>
-          </div>
-                    <ButtonFull text="get in touch"/>
+        <div id="title" class="col text-uppercase h2 my-2">
+          lastest <span class="bgc-text">news</span>
+        </div>
+        <div id="paragraph" class="col text-gray my-2 d-flex justify-content-between">
+          every week we publish content about what is best in the business
+          world.
+              <a @click="changeCardShowed()"
+      type="button "
+      class="btn btn-md button-full rounded text-white text-uppercase"
+    >
+    See all
+    </a>
+        </div>
       </div>
 
-        <!-- v-for links -->
-        <div
-          v-for="(item, index) in links"
-          :key="`col${index}-${item}`"
-          class="col-3 gx-5"
-        >
-          <ul class="text-container d-flex flex-column">
-            <li role="button"
-              class="text-capitalize text-white d-inline-flex"
-              v-for="title in 1"
-              :key="`title - ${title}`"
-            >
-              {{ item.title }}
-            </li>
-            <li role="button" class="d-inline-flex text-capitalize" v-for="link in item.link" :key="`link - ${link}`" >
-              {{ link }}
-            </li>
-          </ul>
+      <!-- card sections -->
+      <div class="row">
+          <div v-for="(card , index) in cards" :key="`card number ${index}`" class="col-3 user-select-none" :class="cardShowed <= index ? '  news-hidden ' : ' d-block '">
+            <div class="card my-5">
+                 <img class="img-fluid" :src="require(`../assets/img/${card.img}`)" alt="none"> 
+              <div class="card-body">
+                <p class="card-text text-center">
+                  {{card.text}}
+                </p>
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -50,99 +40,106 @@
 </template>
 
 <script>
-import ButtonFull from "./microcomponents/ButtonFull.vue";
 export default {
-  name: "SectionLink",
-  components:{
-    ButtonFull,
-  },
+  name: "SectionNews",
+
   data() {
     return {
-      
-      links: [
+        cardShowed:3,
+      cards: [
         {
-          title: "about",
-          link: [
-            "the company",
-            "institutional",
-            "social & events",
-            "innovation",
-            "enviroment",
-            "tecnology",
-          ],
+          img: "news-1.jpg",
+          text: "Incrising creativity is possible for everyone",
         },
         {
-          title: "trasport",
-          link: [
-            "industrialized",
-            "chemicals",
-            "packaged liquids",
-            "construction",
-            "laminated wood",
-            "technology",
-          ],
+          img: "news-2.jpg",
+          text: "Becouse market research is part of the business plan",
         },
         {
-          title: "support",
-          link: [
-            "responsability",
-            "term fo use",
-            "about cookies",
-            "privacy policy",
-            "accessibility",
-            "information",
-          ],
+          img: "news-3.jpg",
+          text: "Working from home is now a trend",
+        },
+        {
+          img: "news-4.jpg",
+          text: "Working from home is now a trend",
+        },
+        {
+          img: "news-5.jpg",
+          text: "Working from home is now a trend",
+        },
+        {
+          img: "news-3.jpg",
+          text: "Working from home is now a trend",
+        },
+        {
+          img: "news-2.jpg",
+          text: "Working from home is now a trend",
+        },
+        {
+          img: "news-1.jpg",
+          text: "Working from home is now a trend",
         },
       ],
     };
   },
+  methods:{
+    changeCardShowed(){
+      if(this.cardShowed === 3){
+      this.cardShowed = 8;
+      } else{
+        this.cardShowed = 3;
+      }
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/sass/colors.scss';
-* {
-  color: grey;
-}
-#link {
-  height: 500px;
-  background-image: url("../assets/img/bg-10.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  #colorized-title {
-  background-color: $blue-lagoon-trasparent;
-  padding: 5px 0px 5px 15px;
-  border-radius: 25px 0px 0px 25px;
-  color:  $blue-lagoon;
-}
-  ul {
-      background-color: rgba(55,55,55,0.5);
-      padding: 40px 25px 40px 30px;
-      width: 60%;
-      border-radius: 30px;
-
-    list-style-type: none;
-    li:first-of-type {
-      font-size: 1.2rem;
-      font-weight: bold;
-      &::before {
-        content: "";
-      }
+@import "../assets/sass/colors.scss";
+section {
+  background-color: #ffffff;
+  #subtitle {
+    font-size: 0.7rem;
+    color: $blue-lagoon;
+    font-weight: bold;
+  }
+  .bgc-text {
+    background-color: $blue-lagoon-trasparent;
+    padding: 5px 10px;
+    color: $blue-lagoon;
+  }
+  .text-gray {
+    color: gray;
+  }
+.button-full{
+      background-color: $blue-lagoon;
     }
-    li {
-      font-size: 0.8rem;
-      margin-bottom: 5px;
+  // cards
+  .card{
+      max-width: 300px;
+      border-radius:25px;
+      overflow: hidden;
+      transition: 0.3s linear;
       &:hover{
-        color: white;
+        filter: brightness(1.5);
+        box-shadow: 5px 5px 15px 5px $blue-lagoon;
+        transition: 0.3s linear;
       }
-      &::before {
-        content: "\f054";
-        font-weight: 800;
-        font-family: "Font Awesome 5 Free";
-        margin-right: 5px;
+img{
+          filter: brightness(0.5);
+}
+      .card-body{
+          position:absolute;
+          bottom: 20px;
+          color: white;
+
       }
-    }
+      .card-text{
+          font-weight: bold;
+      }
+  }
+  .news-hidden{
+    display:none;
   }
 }
 </style>
